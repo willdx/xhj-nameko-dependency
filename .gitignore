@@ -1,0 +1,17 @@
+*.pyc
+
+.installed.cfg
+bin
+develop-eggs
+
+*.egg-info
+
+tmp
+build
+dist
+__pycache__
+.DS_Store
+.hgignore
+.idea/
+MANIFEST.in
+buildout.cfg
