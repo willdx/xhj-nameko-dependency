@@ -14,14 +14,6 @@ from nameko.extensions import DependencyProvider
 ENCODING = "utf-8"
 PAD_STYLE = "pkcs7"
 SIGNATURE_ALGORITHM = "SHA1withRSA"
-SUPPORT_API = [
-    "sign/userverify",
-    "sign/usersign",
-    "remit/createpackage",
-    "remit/payment",
-    "cust/querybalance",
-    "cust/queryrecharge"
-]
 
 
 class XHJClient:
@@ -96,8 +88,6 @@ class XHJClient:
         :param data: dict, call plaintext objects required by different interfaces
         :return: dict
         """
-        if api_name not in SUPPORT_API:
-            raise Exception(f"Unsupported api_name ${api_name}")
         url = f"{self.base_url}/{api_name}"
         encrypt_data = dict(
             mchntNum=self.mchnt_num,
