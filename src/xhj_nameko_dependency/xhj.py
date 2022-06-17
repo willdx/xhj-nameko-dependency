@@ -20,8 +20,8 @@ class XHJClient:
     def __init__(self, config):
         self.config = config
         self.xhj = self.config.get("XHJ", {})
-        self.private_key = self.xhj.get("PRIVATE_KEY")
-        self.public_key = self.xhj.get("PUBLIC_KEY")
+        self.private_key = base64.b64decode(self.xhj.get("PRIVATE_KEY"))
+        self.public_key = base64.b64decode(self.xhj.get("PUBLIC_KEY"))
         self.des_key = self.xhj.get("DES_KEY")
         self.base_url = self.xhj.get("API_BASE_URL")
         self.mchnt_num = self.xhj.get("MCHNT_NUM")

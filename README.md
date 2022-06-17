@@ -12,6 +12,7 @@ pip install xhj-nameko-dependency
 通过yaml文件方式配置nameko环境变量
 
 ```
+# 公私钥需要先base64.encode
 xhj:
   MCHNT_NUM: ${XHJ_MCHNT_NUM}
   API_BASE_URL: ${XHJ_API_BASE_URL}
